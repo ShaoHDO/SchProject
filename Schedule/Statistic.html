@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page Website</title>
+    <style>
+        /* Style for the body */
+        /*背景圖*/
+        body {
+      font-family: 華康手札體;  
+      background-color: rgba(0, 0, 0, .6);
+      background-image: url(Photo/AI.jpg);
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center center;
+    }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* 調整欄位的垂直位置 */
+            align-self: center; /* 調整欄位的垂直位置 */
+            margin: 30px; /* 調整容器的間距 */
+        }
+        .left-column {
+           flex-basis: 60%; /* 調整左欄位的寬度 */
+            background-color: #f2f2f2;
+            padding: 10px;
+            margin-top: 30px;
+            border: 2px solid #000000; /* 為右欄位添加外框 */
+        }
+        .right-column {
+            flex-basis: 40%; /* 調整右欄位的寬度 */
+            height: 556px;
+            background-color: #e6e6e6;
+            padding: 10px;
+            margin-top: 30px;
+            border: 2px solid #000000; /* 為右欄位添加外框 */
+            font-size: 16px; /* 設置文字大小 */
+            color: #333; /* 設置文字顏色 */
+            
+        }
+        .right-column h2 {
+            text-align: center; /* 將標題置中 */
+            user-select: none; /* 設置標題不可選中 */
+        }
+
+        .right-column label {
+        display: inline-block;
+        width: 60px;
+        margin-right: 10px;
+        }
+        .right-column textarea {
+        width: 100%;
+        height: 400px;
+        resize: none;
+        border: none;
+        outline: none;
+        font-size: 16px;
+        color: #333;
+        }
+
+        .iframe-container {
+            position: relative;
+            padding-bottom: 80.25%; /* 設置iframe容器的高度 */
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        /* Style for the navigation bar */
+        /*上面按鈕條*/
+        nav {
+            background-color: rgb(0, 0, 0,0.6);
+            overflow: hidden;
+            position: fixed;
+            top: 0px;
+            width: 100%;
+        }
+        /*按鈕*/
+        nav a {
+            float: left;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            padding: 10px 30px;
+            text-decoration: none;
+            font-size: 17px;
+            border-radius: 5px;
+            transition: background-color 0.5s, color 0.5s;
+            }
+
+            nav a:hover {
+            background-color: rgb(255, 255, 255,0.8);
+            color: #000000;
+            }
+
+        .active {
+            background-color: rgb(84, 195, 88);
+            color: rgb(255, 255, 255);
+        }
+
+        /* Style for the content */
+        /*底下資訊條*/
+        .content {
+            padding-top: 60px;
+            padding-bottom: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        /* Media queries for responsive design */
+        @media screen and (max-width: 600px) {
+            nav a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+        /* Style for the options */
+
+    </style>
+</head>
+<body>
+    
+  <div class="container">
+    <div class="left-column">
+        <div class="iframe-container">
+            <iframe src="file:///C:/Users/m0975/OneDrive/%E6%A1%8C%E9%9D%A2/Schedule/try.html"></iframe> <!-- 嵌入網站 -->
+        </div>
+    </div>
+    <div class="right-column" contenteditable="true">
+        <h2>記事本</h2>
+        <div>
+          <label for="title">標題：</label>
+          <input type="text" id="title" value="我的標題" maxlength="20">
+        </div>
+        <div>
+          <label for="content">內文：</label>
+          <textarea id="content"></textarea>
+        </div>
+      </div>
+</div>
+</div>
+<script>
+    var previewText = document.querySelector('.preview-text');
+    var rightColumn = document.querySelector('.right-column');
+    rightColumn.addEventListener('input', function() {
+        if (previewText.style.display !== 'none') {
+            previewText.style.display = 'none';
+        }
+    });
+</script>
+    <!-- Navigation bar -->
+    <nav>
+        <a class="active" href="file:///C:/Users/m0975/OneDrive/%E6%A1%8C%E9%9D%A2/Schedule/Home.html">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+    </nav>
+</body>
+</html>

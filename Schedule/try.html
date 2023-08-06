@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>簡單統計圖表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        #output {
+            margin-top: 20px;
+        }
+        
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div style="width: 90%;margin: 0 auto;">
+        <input type="text" id="inputText">
+        <button onclick="output()">確定</button>
+        <div id="output"></div>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        var canvas = document.getElementById('myChart');
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['一月', '二月', '三月', '四月', '五月', '六月'],
+                datasets: [{
+                    label: '讀書',
+                    data:[3, 6, 2, 1, 6, 8],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }, {
+                    label: '平均時間',
+                    data: [3, 4.5, 3.3, 3, 3.6, 4.2],
+                    type: 'line',
+                    fill: false,
+                    borderColor: 'rgba(255, 0, 0, 1)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+
+        function output(){
+            // 讀取輸入框資料
+            const inputText = document.getElementById("inputText").value;
+
+            myChart.data.datasets[0].data = [inputText, 10, 15, 20, 25, 30];
+            myChart.options.title = {
+                display: true,
+                text: 'Updated Chart'
+            };
+
+            // 更新圖表
+            myChart.update();
+
+        }
+    </script>
+</body>
+</html>

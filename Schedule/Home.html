@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Home Page Website</title>
+  <style>
+    /* Style for the body */
+    /*背景圖*/
+    body {
+      font-family: 華康手札體;  
+      background-color: rgba(0, 0, 0, .6);
+      background-image: url(Photo/AI.jpg);
+      background-blend-mode: multiply;
+      background-size: cover;
+      background-position: center center;
+    }
+
+
+    /* Style for the navigation bar */
+    /*上面按鈕條*/
+    nav {
+      background-color: rgb(0, 0, 0, 0.6);
+      overflow: hidden;
+      position: fixed;
+      top: 0px;
+      width: 100%;
+    }
+
+    /*按鈕*/
+    nav a {
+      float: left;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 10px 30px;
+      text-decoration: none;
+      font-size: 17px;
+      border-radius: 5px;
+      transition: background-color 0.5s, color 0.5s;
+    }
+
+    nav a:hover {
+      background-color: rgb(255, 255, 255, 0.8);
+      color: #000000;
+    }
+
+    .active {
+      background-color: rgb(84, 195, 88);
+      color: rgb(255, 255, 255);
+    }
+
+    /* Style for the content */
+    /*三欄位*/
+
+    /* Media queries for responsive design */
+    @media screen and (max-width: 600px) {
+      nav a {
+        float: none;
+        display: block;
+        text-align: left;
+      }
+    }
+
+    /* Style for the options */
+    /*中間三個選項*/
+    .options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: 280px auto 0;
+    }
+
+    .option {
+      flex: 1;
+      background-color: rgb(255, 255, 255, 0.75);
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin: 0 10px;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .option:hover {
+      opacity: 0.75;
+    }
+
+    .option h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .option img {
+      max-width: 40%;
+      height: auto;
+      margin-bottom: 0px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bc"></div>>
+  <nav>
+    <a class="active" href="file:///C:/Users/m0975/OneDrive/%E6%A1%8C%E9%9D%A2/Schedule/Home.html">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="#">Login</a>
+  </nav>
+  <p
+    style="color: #ffffff; font-size: 35px; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);">
+    Welcome to AI scheduling assistant!</p>
+  <div class="options">
+    <div class="option">
+      <h2>AI Schedule</h2>
+      <a href="file:///C:/Users/m0975/OneDrive/%E6%A1%8C%E9%9D%A2/Schedule/Ai%20Schedule.html" target="_blank"><img
+          src="Photo/ai (1).png" alt="智能排程"></a>
+      <p>1.提高效率和生產力<br>2.根據優先順序和資源可用性<br>3.自動優化任務分配和時間安排</p>
+    </div>
+    <div class="option">
+      <h2>Pomodoro Clock</h2>
+      <a href="file:///C:/Users/m0975/OneDrive/%E6%A1%8C%E9%9D%A2/Schedule/PomodoroClock-master/index.html"
+        target="_blank"><img src="Photo/pomodoro-technique.png" alt="Pomodoro Clock"></a>
+      <p>1.時間管理技巧<br>2.提高專注力和效率<br>3.設定固定工作時間和休息時間</p>
+    </div>
+    <div class="option">
+      <h2>Statistic</h2>
+      <a href="file:///C:/Users/m0975/OneDrive/%E6%A1%8C%E9%9D%A2/Schedule/Statistic.html" target="_blank"><img
+          src="Photo/analytics.png" alt="Option 1"></a>
+      <p>1.統計番茄鐘工作效率<br>2.工作時間和休息時間的比例<br>3.工作專注度和效率的量化評估</p>
+    </div>
+  </div>
+</body>
+
+</html>
