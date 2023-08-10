@@ -7,7 +7,7 @@ $(document).ready(function() {
             // 背景顏色
             // 定義莫蘭迪色系的顏色
             document.body.style.backgroundColor = "rgba(0, 0, 0,.6)";
-            document.body.style.backgroundImage = "url(Schedule/Photo/藍1.jpg)";
+            document.body.style.backgroundImage = "url(Schedule/Photo/藍4.jpg)";
             document.body.style.backgroundBlendMode = "multiply";
             document.body.style.backgroundSize = "cover";
             document.body.style.backgroundPosition = "center center";
